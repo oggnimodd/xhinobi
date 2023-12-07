@@ -1,5 +1,5 @@
 {
-  "name": "node-typescript-boilerplate",
+  "name": "shinobi",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
