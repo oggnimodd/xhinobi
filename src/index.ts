@@ -3,7 +3,7 @@ import path from "path";
 import clipboardy from "clipboardy";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import { isTextPath } from "@/utils";
+import { isTextPath, getPackageVersion } from "@/utils";
 
 const cwd = process.cwd();
 
@@ -20,7 +20,7 @@ const { n: prependFileName, m: minify } = await yargs(hideBin(Bun.argv))
     type: "boolean",
     default: true,
   })
-  .version()
+  .version(getPackageVersion())
   .help()
   .alias("help", "h").argv;
 
