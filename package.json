@@ -1,5 +1,5 @@
 {
-  "name": "shinobi",
+  "name": "xhinobi",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -10,7 +10,7 @@
   },
   "type": "module",
   "bin": {
-    "shinobi": "./dist/index.js"
+    "xhinobi": "./dist/index.js"
   },
   "files": ["dist"],
   "scripts": {
