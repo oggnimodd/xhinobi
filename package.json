@@ -5,22 +5,14 @@
   "module": "./dist/index.js",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
+      "import": "./dist/index.js"
     }
   },
   "type": "module",
-  "types": "./dist/index.d.ts",
-  "engines": {
-    "node": ">= 18.16 <19"
+  "bin": {
+    "shinobi": "./dist/index.js"
   },
   "files": ["dist"],
-  "lint-staged": {
-    "**/*.{js,ts,jsx,tsx,json}": [
-      "biome check --apply .",
-      "biome format --write ."
-    ]
-  },
   "scripts": {
     "dev": "bun src/index.ts",
     "dev:watch": "bun --hot src/index.ts",
@@ -30,7 +22,7 @@
     "clean": "rimraf coverage build tmp dist",
     "clean:deps": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
     "prebuild": "bun run lint",
-    "build": "bun run clean && tsc -p tsconfig.release.json && bun --bun vite build",
+    "build": "bun run clean && bun --bun tsc -p tsconfig.release.json && bun scripts/build.js",
     "prepare": "bun scripts/prepare.js",
     "pre-commit": "bun lint-staged",
     "test": "vitest",
@@ -69,5 +61,11 @@
     "vite-plugin-dts": "^3.5.3",
     "vite-tsconfig-paths": "^4.2.1",
     "vitest": "^1.0.1"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,jsx,tsx,json}": [
+      "biome check --apply .",
+      "biome format --write ."
+    ]
   }
 }

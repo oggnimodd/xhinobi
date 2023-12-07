@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import path from "path";
 import clipboardy from "clipboardy";
 import yargs from "yargs";
