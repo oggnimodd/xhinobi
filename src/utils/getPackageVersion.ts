@@ -10,7 +10,7 @@ const getPackageVersion = () => {
   // Combine the paths with the current directory to avoid potential path traversal vulnerabilities.
   const packageJsonPath = path.join(
     __dirname,
-    process.env.NODE_ENV === "production" ? "../" : "../../",
+    process.env.NODE_ENV !== "development" ? "../" : "../../",
     "package.json",
   );
 
@@ -18,7 +18,8 @@ const getPackageVersion = () => {
 
   // Validate the package name before returning the version.
   if (packageJson.name !== "xhinobi") {
-    throw new Error(`Unexpected package name: ${packageJson.name}`);
+    console.warn(`Unexpected package name: ${packageJson.name}`);
+    return null;
   }
 
   return packageJson.version;
