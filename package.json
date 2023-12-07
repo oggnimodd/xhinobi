@@ -1,7 +1,7 @@
 {
   "name": "@oggnimodd/xhinobi",
   "author": {
-    "name": "@oggnimodd"
+    "name": "oggnimodd"
   },
   "version": "0.0.0",
   "main": "./dist/index.js",
