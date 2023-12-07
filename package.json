@@ -1,5 +1,8 @@
 {
-  "name": "xhinobi",
+  "name": "@oggnimodd/xhinobi",
+  "author": {
+    "name": "@oggnimodd"
+  },
   "version": "0.0.10",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -12,10 +15,7 @@
   "bin": {
     "xhinobi": "./dist/index.js"
   },
-  "files": [
-    "dist",
-    "images"
-  ],
+  "files": ["dist", "images"],
   "scripts": {
     "dev": "bun src/index.ts",
     "dev:watch": "bun --hot src/index.ts",
