@@ -19,7 +19,10 @@ const { n: prependFileName, m: minify } = await yargs(hideBin(Bun.argv))
     describe: "Minify the output",
     type: "boolean",
     default: true,
-  }).argv;
+  })
+  .version()
+  .help()
+  .alias("help", "h").argv;
 
 export const getFiles = (data: Buffer) => {
   return data
