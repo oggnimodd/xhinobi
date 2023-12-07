@@ -1,6 +1,6 @@
 {
   "name": "xhinobi",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "exports": {
@@ -12,7 +12,9 @@
   "bin": {
     "xhinobi": "./dist/index.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "bun src/index.ts",
     "dev:watch": "bun --hot src/index.ts",
