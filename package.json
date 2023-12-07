@@ -12,9 +12,7 @@
   "bin": {
     "xhinobi": "./dist/index.js"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "dev": "bun src/index.ts",
     "dev:watch": "bun --hot src/index.ts",

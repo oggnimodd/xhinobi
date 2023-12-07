@@ -1,8 +1,10 @@
-<img src="./images/logo.png" width="150" style="border-radius:10px;"/>
+<p align="center">
+ <img src="./images/logo-rounded.png" width="175"/>
+</p>
 
 # xhinobi
 
-Xhinobi simplifies the process of aggregating text content from multiple files without the need to manually open and copy each file individually. Instead of laboriously opening each file and copying its content, Xhinobi streamlines this task by allowing users to gather text from multiple files automatically using command-line instructions. Xhinobi is a useful tool when you need to copy a large amount of text content from multiple files for use in a language model like ChatGPT or Phind. This is especially helpful when you're coding and need to provide the model with a large amount of context or data.
+xhinobi simplifies the process of aggregating text content from multiple files without the need to manually open and copy each file individually. Instead of laboriously opening each file and copying its content, Xhinobi streamlines this task by allowing users to gather text from multiple files automatically using command-line instructions. Xhinobi is a useful tool when you need to copy a large amount of text content from multiple files for use in a language model like ChatGPT or Phind. This is especially helpful when you're coding and need to provide the model with a large amount of context or data.
 
 <img src="./images/demo.gif" />
 
