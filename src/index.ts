@@ -4,6 +4,8 @@ import clipboardy from "clipboardy";
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
 import { isTextPath, getPackageVersion } from "@/utils";
+import { openTempFileInCode, createTempFile } from "@/utils";
+import { IS_GITPOD } from "./constants";
 
 const cwd = process.cwd();
 
@@ -53,11 +55,19 @@ export const processFiles = (files: ReturnType<typeof getFiles>) => {
         .map((t) => (minify ? t.replace(/\s+/g, " ").trim() : t))
         .reduce((a, b) => a + b, "");
 
-      clipboardy.writeSync(final);
-      console.log(`Copied ${final.length} characters to clipboard`);
+      if (IS_GITPOD) {
+        const tempFile = createTempFile(final);
+        openTempFileInCode(tempFile);
+        console.log(
+          "Will open the text in text editor since we are inside cloud-based development environments",
+        );
+      } else {
+        clipboardy.writeSync(final);
+        console.log(`Copied ${final.length} characters to clipboard`);
+      }
     })
     .catch((error) => {
-      console.error(error);
+      console.log(error.message);
     });
 };
 
