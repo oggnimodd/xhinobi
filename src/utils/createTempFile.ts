@@ -1,5 +1,5 @@
 import { TEMP_FILE_NAME } from "@/constants";
-import { createWriteStream, existsSync, unlinkSync } from "fs";
+import { existsSync, unlinkSync } from "fs";
 import { tmpdir } from "os";
 import { join } from "path";
 
@@ -9,9 +9,11 @@ const createTempFile = (text: string) => {
     unlinkSync(tempFilePath);
   }
 
-  const writeStream = createWriteStream(tempFilePath);
-  writeStream.write(text);
-  writeStream.end();
+  const file = Bun.file(tempFilePath);
+  const writer = file.writer();
+
+  writer.write(text);
+  writer.end();
 
   return tempFilePath;
 };
