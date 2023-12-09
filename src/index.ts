@@ -59,7 +59,7 @@ export const processFiles = (files: ReturnType<typeof getFiles>) => {
         const tempFile = createTempFile(final);
         openTempFileInCode(tempFile);
         console.log(
-          "Will open the text editor because we are currently in a cloud-based development environment",
+          "Opened the text editor because we are currently in a cloud-based development environment",
         );
       } else {
         clipboardy.writeSync(final);
