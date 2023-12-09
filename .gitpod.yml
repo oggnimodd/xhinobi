@@ -1,0 +1,3 @@
+tasks:
+  - init: curl -fsSL https://bun.sh/install | bash && source /home/gitpod/.bashrc && bun install && npm install -g @antfu/ni
+    command: bun run ./src/index.ts
